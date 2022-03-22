@@ -17,6 +17,7 @@ function fuseArrays(firstArray, secondArray) {
         fusionArray.push(firstArray[i], secondArray[i]);
     }
 
-    console.log(fusionArray);
-
 }
+
+fuseArrays(firstArray, secondArray);
+console.log(fusionArray);
