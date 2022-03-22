@@ -1,76 +1,29 @@
 console.log('JS OK!');
 
-// ----- JSNACK 1 ----- //
-//Crea un array di 10 oggetti che rappresentano una zucchina
-//indicando per ognuna varietà, peso e lunghezza
-//Calcola quanto pesano tutte le zucchine
+// ----- JSNACK 3 ----- //
+//Scrivi funzione che accetti una stringa come argomento e la inverta
 
-function randomWeight() {
-    return Math.floor(Math.random() * 450) + 50;
+function invert(word) {
+
+    let split = word.split('');
+
+    let reverse = split.reverse();
+
+    let join = reverse.join('');
+
+    return join;
 }
 
-function totalWeight() {
-    let sum = 0;
-    for (let i = 0; i < zucchine.length; i++) {
-        sum += zucchine[i].weight;
-        console.log(zucchine[i].weight);
-    }
-    return sum;
-}
+const result = document.getElementById('result');
+const invertButton = document.getElementById('invertButton');
 
-const zucchine = [{
-    variety: 'nera',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'tonde',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'trombetta',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'pâtisson',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'Crookneck',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'giallo',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'napoletana',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'fiorentino',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'romanesco',
-    weight: randomWeight(),
-    length: '26cm'
-},
-{
-    variety: 'striata',
-    weight: randomWeight(),
-    length: '26cm'
-},
-];
+invertButton.addEventListener('click', function () {
 
-console.log('Array lungo: ' + zucchine.length);
+    let userInput = document.getElementById('userInput').value;
 
-totalWeight();
-console.log('Il peso totale delle zucchine è: ' + totalWeight());
+    let invertWord = invert(userInput);
+    console.log(invertWord);
+
+    result.innerText = `Reverse: ${invertWord}`;
+
+})
