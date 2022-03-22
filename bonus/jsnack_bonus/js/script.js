@@ -32,17 +32,19 @@ console.log(fusionArray);
 
 function threeArgs(array, num1, num2) {
 
-    for (let i = 0; i < array.lengh; i++) {
-        if (array[i] >= num1 && array[i] <= num2) {
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (i >= num1 && i <= num2) {
             newArray.push(array[i]);
         }
     }
+    return newArray;
 
 }
 
-let newArray = [];
 
 const techThings = ['mouse', 'keyboard', 'laptop', 'CPU', 'trakpad'];
 
-threeArgs(techThings, 1, 4);
-console.log(newArray);
+threeArgs(techThings, 2, 4);
+console.log(threeArgs(techThings, 2, 4));
